@@ -1,0 +1,37 @@
+{
+  "name": "shri-node",
+  "version": "1.0.0",
+  "description": "homework project",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "test",
+    "lint": "eslint '*.{js, json}'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkungurtsev/shri-node.git"
+  },
+  "author": "m.kungurtsev <maxkung.1996@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mkungurtsev/shri-node/issues"
+  },
+  "homepage": "https://github.com/mkungurtsev/shri-node#readme",
+  "engines": {
+    "node": ">=14.18.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "prettier": "^2.4.1"
+  },
+  "dependencies": {
+    "backrem": "^1.1.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.3",
+    "nanoid": "^3.1.28"
+  }
+}
