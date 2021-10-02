@@ -29,11 +29,6 @@ const get = async (req, res) => {
     threshold,
   )
     .then((readableStream) => {
-      res.set({
-        'Content-Type': 'image/jpeg',
-      });
-
-      readableStream.on('end', () => res.end());
       readableStream.pipe(res);
     })
     .catch(() => res.status(500).json('Something went wrong'));
