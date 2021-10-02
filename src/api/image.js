@@ -22,7 +22,7 @@ const get = async (req, res) => {
 
   const image = new Image(imageRaw);
 
-  return res.json(image.toPublicJSON());
+  return res.download(image.path);
 };
 
 const deleteImage = async (req, res) => {
