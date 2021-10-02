@@ -1,5 +1,6 @@
 const fs = require('fs');
 const { replaceBackground } = require('backrem');
+const { nanoid } = require('nanoid');
 
 const db = require('../entities/db');
 
@@ -24,10 +25,15 @@ const get = async (req, res) => {
   return replaceBackground(
     frontStream,
     backStream,
-    color.split(','),
+    color ? color.split(',') : [0, 0, 0],
     threshold,
   )
     .then((readableStream) => {
+      res.set({
+        'Content-Disposition': `attachment; filename="${nanoid()}.jpeg"`,
+        'Content-Type': 'image/jpeg',
+      });
+
       readableStream.on('end', () => res.end());
       readableStream.pipe(res);
     })

@@ -29,7 +29,7 @@ const deleteImage = async (req, res) => {
   const id = await db.remove(req.params.id);
 
   if (id) {
-    return res.json(id);
+    return res.json({ id });
   }
 
   return res.status(404).json('Image not found');
