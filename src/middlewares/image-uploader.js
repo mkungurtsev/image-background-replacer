@@ -4,7 +4,7 @@ const { nanoid } = require('nanoid');
 const { IMAGE_FOLDER } = require('../config');
 
 function fileFilter(req, file, cb) {
-  if (file.mimetype !== 'image/jpeg') {
+  if (file.mimetype.split('/')[0] !== 'image') {
     cb(null, false);
     return;
   }
