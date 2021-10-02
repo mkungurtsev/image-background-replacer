@@ -1,6 +1,5 @@
 const fs = require('fs');
 const { replaceBackground } = require('backrem');
-const { nanoid } = require('nanoid');
 
 const db = require('../entities/db');
 
@@ -29,6 +28,7 @@ const get = async (req, res) => {
     threshold,
   )
     .then((readableStream) => {
+      res.header('Content-Type', frontRaw.mimeType);
       readableStream.pipe(res);
     })
     .catch(() => res.status(500).json('Something went wrong'));
