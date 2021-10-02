@@ -30,7 +30,6 @@ const get = async (req, res) => {
   )
     .then((readableStream) => {
       res.set({
-        'Content-Disposition': `attachment; filename="${nanoid()}.jpeg"`,
         'Content-Type': 'image/jpeg',
       });
 
