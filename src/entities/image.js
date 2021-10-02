@@ -9,7 +9,7 @@ module.exports = class Image {
     this.path = data.path;
     this.uploadedAt = data.uploadedAt;
     this.size = data.size;
-    this.mimeType = data.mimetype;
+    this.mimeType = data.mimetype || data.mimeType;
   }
 
   async removeOriginal() {
